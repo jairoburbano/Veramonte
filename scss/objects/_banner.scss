@@ -1,0 +1,197 @@
+/*------------------------------------*\
+$BANNER
+\*------------------------------------*/
+.banner {
+    width: 100%;
+    @include respond-to(tablet) {
+        position: relative;
+        height: 320px;
+        margin-bottom: 45px;
+    }
+}
+.no-margin {
+    @include respond-to(tablet) {
+        margin-bottom: 0;
+    }
+}
+.banner--home {
+    height: 100vh;
+    .banner__media {
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: $level1;
+        &::after {
+            height: 80%;
+        }
+    }
+    .banner__logo {
+        display: none;
+        @include respond-to(tablet) {
+            position: relative;
+            padding-top: 200px;
+            z-index: $level2;
+            width: 670px;
+            height: 275px;
+            display: block;
+            margin: auto;
+        }
+    }
+    .banner__title {
+        position: relative;
+        z-index: $level2;
+        color: $cream;
+        padding-top: 100px;
+        @include respond-to(tablet) {
+            padding-top: 50px;
+            top: 0;
+            margin-bottom: 20px;
+        }
+    }
+    .banner__text {
+        color: white;
+        @include font-size(20px, 30px);
+        @extend .droid;
+        display: none;
+        position: relative;
+        z-index: $level2;
+        text-align: center;
+        width: 620px;
+        margin: auto;
+        @include respond-to(tablet) {
+            display: block;
+        }
+        @include respond-to(desktop) {
+            width: 850px;
+        }
+    }
+    .banner__button {
+        position: absolute;
+        z-index: $level2;
+        bottom: 20px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        color: white;
+        p {
+            @include font-size(16px, 19px);
+            @extend .droid;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+    }
+}
+.banner--single {
+    .banner__title {
+        @include respond-to(tablet) {
+            display: block;
+        }
+    }
+}
+.banner__media {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    background: $title;
+    overflow: hidden;
+    @include respond-to(tablet) {
+        height: 100%;
+    }
+    .banner--state & {
+        &::after {
+            display: none;
+        }
+        video {
+            display: none;
+            @include respond-to(tablet) {
+                display: block;
+            }
+        }
+        img {
+            display: block;
+            @include respond-to(tablet) {
+                display: none;
+            }
+        }
+    }
+    &::after {
+        content: '';
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 260px;
+        z-index: $level1;
+        background: rgba(0,0,0,0.8);
+        background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
+        @include respond-to(tablet) {
+            display: block;
+        }
+        @include respond-to(desktop) {
+            height: 320px;
+        }
+    }
+    img, video {
+        width: 100%;
+        object-fit: cover;
+        opacity: .6;
+        @include respond-to(tablet) {
+            opacity: 1;
+        }
+    }
+}
+.media-video__mobile {
+    @include cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    .no-touch & {
+        display: none;
+    }
+}
+.banner__media-video-cover {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    .touch & {
+        display: none;
+    }
+}
+.banner__media-video__trama {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(black, .2);
+    width: 100%;
+    height: 100%;
+    z-index: $level2;
+}
+.banner__title {
+    @extend .freeland;
+    @include font-size(60px, 60px);
+    color: $title;
+    text-align: center;
+    margin: 34px 0 20px;
+    width: 100%;
+    @include respond-to(tablet) {
+        @include font-size(80px, 80px);
+        position: absolute;
+        top: 160px;
+        left: 0;
+        margin: 0;
+        color: $cream;
+        z-index: $level2;
+    }
+}

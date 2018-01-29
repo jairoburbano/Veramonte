@@ -1,0 +1,170 @@
+/*------------------------------------*\
+$CONTACTO
+\*------------------------------------*/
+.contact {
+    max-width: 580px;
+    margin: auto;
+    @include respond-to(desktop) {
+        max-width: 905px;
+    }
+    .title {
+        margin-bottom: 30px;
+        @include respond-to(tablet) {
+            margin-bottom: 60px;
+        }
+    }
+    .message {
+        background: #2dcca4;
+        width: 100%;
+        padding: 24px 15px;
+        color: white;
+        text-align: center;
+        margin-top: 20px;
+        max-width: 450px;
+        margin: auto;
+        display: none;
+    }
+    .group {
+        width: 100%;
+        margin-bottom: 20px;
+        @include respond-to(tablet) {
+            width: calc(50% - 20px);
+        }
+        @include respond-to(desktop) {
+            width: calc(33.333% - 25px);
+        }
+        &.form__error {
+            position: relative;
+            input, select, textarea {
+                border-color: #a02b2b;
+            }
+            label {
+                color: #a02b2b;
+            }
+            p.form__error {
+                color: #a02b2b;
+                position: absolute;
+                @include font-size(12px, 20px);
+                bottom: -16px;
+                right: 0;
+            }
+        }
+    }
+    .textarea-group {
+        @include respond-to(tablet) {
+            width: 100%;
+        }
+        @include respond-to(desktop) {
+            width: calc(66.666% - 15px);
+        }
+    }
+    .select-group {
+        position: relative;
+        @include respond-to(tablet) {
+            height: 64px;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            right: 10px;
+            top: 40px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 8px 5px 0 5px;
+            border-color: $title transparent transparent transparent;
+            z-index: $level1;
+        }
+    }
+    label {
+        margin-bottom: 5px;
+        display: block;
+    }
+    select, input, textarea {
+        width: 100%;
+        height: 38px;
+        border: 1px solid $title;
+        color: $title;
+        @include font-size(16px, 36px);
+        color: $title;
+        border-radius: 0;
+        background-color: transparent;
+        position: relative;
+        z-index: $level2;
+        padding: 0 12px 0 8px;
+        appearance: none;
+    }
+    textarea {
+        height: 70px;
+        resize: none;
+    }
+    .btn--send {
+        border: 1px solid $principal;
+        padding: 0 15px;
+        height: 38px;
+        @include font-size(16px, 36px);
+        display: block;
+        margin-left: auto;
+        margin-right: 0;
+        width: 70px;
+        transition: all $time;
+        .no-touch & {
+            &:hover {
+                background: $title;
+                color: white;
+            }
+        }
+    }
+}
+.contact-form {
+    padding-bottom: 42px;
+}
+.form__container {
+    @include respond-to(tablet) {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+}
+.contact__map {
+    border-top: 1px solid rgba($button, .3);
+    padding-top: 15px;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    hr {
+        background: $button;
+    }
+    p {
+        @include less-than(tablet) {
+            width: 100%;
+            padding-left: 0;
+        }
+        padding-left: 10px;
+        color: $title;
+        margin-bottom: 15px;
+        width: 50%;
+        @include font-size(18px, 21px);
+        @extend .droid;
+        span {
+            @include font-size(14px, 16px);
+        }
+        .map__title {
+            @include font-size(20px, 24px);
+        }
+        .map__title--space {
+            display: block;
+        }
+        a {
+            color: $title;
+        }
+    }
+}
+#map {
+    width: 100%;
+    height: 230px;
+    margin-bottom: 15px;
+    @include respond-to(desktop) {
+        height: 320px;
+    }
+}

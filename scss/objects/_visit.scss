@@ -1,0 +1,37 @@
+/*------------------------------------*\
+$VISIT
+\*------------------------------------*/
+.visit {
+    
+}
+.visit__content {
+    z-index: $level2;
+    padding: 0 10px;
+    max-width: 510px;
+    margin: auto;
+    .title {
+        @include font-size(23px, 30px);
+        color: $principal;
+        @extend .droid;
+        letter-spacing: 4px;
+        margin-bottom: 25px;
+    }
+    .btn {
+        width: 270px;
+        height: 40px;
+        margin: auto;
+        display: block;
+        border: 1px solid $title;
+        color: $title;
+        @include font-size(16px, 38px);
+        @extend .droid;
+        text-align: center;
+        transition: all $time;
+        .no-touch & {
+            &:hover {
+                background: $title;
+                color: white;
+            }
+        }
+    }
+}

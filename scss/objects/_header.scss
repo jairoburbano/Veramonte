@@ -1,0 +1,630 @@
+/*------------------------------------*\
+$HEADER
+\*------------------------------------*/
+.header {
+    width: 100%;
+    position: fixed;
+    z-index: $level8;
+    transition: all $time;
+    top: 0;
+    left: 0;
+    @include respond-to(tablet) {
+        padding: 0 20px;
+    }
+    @include respond-to(desktop) {
+    }
+}
+.header--fixed {
+    background: $cream;
+    border-bottom: 1px solid rgba($title, .5);
+    @include respond-to(tablet) {
+        height: 80px;
+    }
+    @include respond-to(desktop) {
+        height: 42px;
+    }
+    .header__logo__iso {
+        .home & {
+            @include respond-to(tablet) {
+                display: block;
+            }
+        }
+    }
+    .header__logo__pattern {
+        display: none;
+    }
+    .header__menu {
+        .iso {
+            fill: $principal;
+        }
+        .circle {
+            stroke: $principal;
+        }
+    }
+    .menu {
+        @include respond-to(tablet) {
+            margin-top: 0;
+            height: 24px;
+            width: 100%;
+        }
+        @include respond-to(desktop) {
+            height: 42px;
+            top: 0;
+        }
+    }
+    .menu-item {
+        @include less-than(desktop) {
+            &:nth-child(3), &:nth-child(4) {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+    }
+    .header__logo__pattern {
+        @include respond-to(tablet) {
+            height: 0px;
+            svg {
+                height: 0px;
+            }
+        }
+    }
+    .header__logo__iso {
+        svg {
+            fill: $principal;
+        }
+    }
+    .menu-item {
+        @include respond-to(tablet) {
+            color: $principal;
+        }
+    }
+    .header--bottom {
+        overflow: hidden;
+        @include respond-to(desktop) {
+            height: 42px;
+        }
+    }
+    .header--links--right {
+        @include respond-to(tablet) {
+            color: $principal;
+            a {
+                color: $principal;
+            }
+        }
+    }
+    .header__search {
+        .input-group {
+            input {
+                @include respond-to(tablet) {
+                    color: $principal;
+                }
+            }
+        }
+        .send-group {
+            svg {
+                @include respond-to(tablet) {
+                    fill: $principal;
+                }
+            }
+        }
+    }
+    .header__contacto, .header__redes {
+        svg {
+            @include respond-to(tablet) {
+                fill: $principal;
+            }
+        }
+    }
+    .header__search {
+        @include respond-to(tablet) {
+            opacity: 0;
+        }
+    }
+}
+.header--open {
+    .header--top {
+        background: $principal;
+    }
+    .header__menu {
+        .iso {
+            fill: $cream;
+        }
+        .circle {
+            stroke: $cream;
+        }
+    }
+    .header__logo__iso {
+        svg {
+            fill: white;
+        }
+    }
+}
+.header--top {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 0 10px;
+    position: relative;
+    z-index: $level2;
+    transition: all $time;
+    @include respond-to(tablet) {
+        display: flex;
+        justify-content: flex-start;
+        flex-flow: column wrap;
+        align-items: center;
+        padding: 0;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 130px;
+    }
+    &::after {
+        content: '';
+        width: calc(100% - 20px);
+        height: 1px;
+        background: $cream;
+        opacity: .3;
+        position: absolute;
+        left: 10px;
+        bottom: 0;
+        @include respond-to(tablet) {
+            display: none;
+        }
+    }
+}
+.header__logo {
+}
+.header__logo__pattern {
+    display: none;
+    @include respond-to(tablet) {
+        display: block;
+        height: 68px;
+        transition: all $time;
+    }
+    svg {
+        fill: $cream;
+        width: 130px;
+        height: 68px;
+        transition: all $time;
+        .home & {
+            @include respond-to(desktop) {
+                width: 210px;
+                height: 110px;
+            }
+        }
+    }
+}
+.header__logo__iso {
+    display: block;
+    transition: all $time;
+    @include respond-to(tablet) {
+        margin-top: 5px;
+    }
+    .home & {
+        @include respond-to(tablet) {
+            display: none;
+        }
+    }
+    svg {
+        fill: $cream;
+        @include respond-to(tablet) {
+            width: 130px;
+        }
+    }
+}
+.header__menu {
+    @include respond-to(tablet) {
+        display: none;
+    }
+    svg {
+        width: 30px;
+        height: 30px;
+    }
+    .iso {
+        fill: $cream;
+    }
+    .circle {
+        stroke: $cream;
+    }
+}
+.header--bottom {
+    display: none;
+    position: absolute;
+    width: 100%;
+    overflow-y: auto;
+    background: rgba(#000, .9);
+    top: 0;
+    left: 0;
+    z-index: $level1;
+    padding: 50px 10px 0;
+    height: 100vh;
+    @include respond-to(tablet) {
+        display: block;
+        position: static;
+        height: auto;
+        top: auto;
+        left: auto;
+        padding: 0;
+        background-color: transparent;
+        transition: all $time;
+    }
+}
+.header--bottom__container {
+    display: flex;
+    flex-flow: column-reverse wrap;
+    height: calc(100vh - 50px);
+    justify-content: space-between;
+    @include respond-to(tablet) {
+        flex-flow: column wrap;
+        height: auto;
+        justify-content: flex-start;
+        overflow: hidden;
+    }
+}
+.menu {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    padding: 65px 0 30px;
+    @include respond-to(tablet) {
+        flex-flow: row wrap;
+        justify-content: space-between;
+        padding: 0;
+        margin: 20px auto 0;
+        height: 42px;
+        align-items: center;
+        position: absolute;
+        top: 42px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        transition: all $time;
+        width: 100%;
+        padding: 0 20px;
+    }
+    @include respond-to(desktop) {
+        max-width: 850px;
+    }
+}
+.menu-item {
+    @extend .droid;
+    color: white;
+    @include font-size(20px, 20px);
+    letter-spacing : 4.78px;
+    margin: 15px 0;
+    transition: all $time;
+    .no-touch & {
+        opacity: .5;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    @include respond-to(tablet) {
+        font-size : 16px;
+        letter-spacing : 2.24px;
+        margin: 0;
+        &:nth-child(3) {
+            margin-right: 117px;
+        }
+        &:nth-child(4) {
+            margin-left: 117px;
+        }
+        &.current-menu-item {
+            opacity: 1;
+        }
+    }
+}
+.header--links {
+    width: 100%;
+    height: 72px;
+    display: flex;
+    flex-flow: row-reverse wrap;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(white, .3);
+    @include respond-to(tablet) {
+        height: 42px;
+        flex-flow: row wrap;
+        border-top: none;
+    }
+}
+.header--links--left {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px 10px;
+    @include respond-to(tablet) {
+        position: relative;
+        width: 50%;
+        height: 42px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0;
+        &::after {
+            content: '';
+            width: calc(100% - 117px);
+            height: 1px;
+            background: $cream;
+            opacity: .3;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+    }   
+}
+.header--links__redes {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    @include respond-to(tablet) {
+        position: relative;
+        height: 42px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-right: 10px;
+    }   
+    @include respond-to(desktop) {
+        margin-right: 0;
+    }
+}
+.icon--shop {
+    color: white;
+    transition: all 300ms;
+    @extend .droid;
+    letter-spacing: 1px;
+    @include font-size(14px, 14px);
+    transition: all 300ms;
+    @include less-than(tablet) {
+        @include font-size(16px, 18px);
+    }
+    @include respond-to(tablet) {
+        border-left: 1px solid rgba(white, .5);
+        .header--fixed & {
+            border-left: 1px solid rgba($principal, .5);
+            color: $principal;
+            svg {
+                fill: $principal;
+            }
+        }
+    }
+    @include respond-to(desktop) {
+        padding-left: 15px;
+    }
+    .no-touch & {
+        opacity: .5;
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    svg {
+        max-width: 20px;
+        max-height: 18px;
+        fill: white;
+        transition: all 300ms;
+        @include respond-to(tablet) {
+            max-height: 14px;
+        }
+    }
+}
+.header--links--right {
+    width: 100%;
+    display: flex;
+    flex-flow: row-reverse wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(white, .3);
+    padding: 10px;
+    @include respond-to(tablet) {
+        position: relative;
+        width: 50%;
+        height: 42px;
+        justify-content: flex-end;
+        flex-flow: row wrap;
+        align-items: center;
+        border-top: 0;
+        padding: 0;
+        &::after {
+            content: '';
+            width: calc(100% - 117px);
+            height: 1px;
+            background: $cream;
+            opacity: .3;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+    }
+}
+.header--links--icons {
+    @include respond-to(tablet) {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-flow: row wrap;
+        position: relative;
+        margin-right: 10px;
+    }
+}
+.header--links--language {
+    color: white;
+    display: flex;
+    flex-flow: row wrap;
+    a {
+        color: white;
+        @extend .droid;
+        font-size : 12px;
+        letter-spacing : 1.68px;
+        color : #FFFFFF;
+        opacity: .5;
+        display: flex;
+        justify-content: center;
+        flex-flow: row wrap;
+        align-items: center;
+        &.active {
+            opacity: 1;
+        }
+    }
+    span {
+        margin: 0 5px;
+    }
+}
+.header__search {
+    position: absolute;
+    width: calc(100% - 20px);
+    height: 50px;
+    top: 50px;
+    left: 10px;
+    @include respond-to(tablet) {
+        width: 20px;
+        position: relative;
+        top: 0;
+        left: 0;
+        height: 42px;
+        margin-right: 10px;
+        transition: all $time;
+        overflow: hidden;
+    }
+    &.active {
+        @include respond-to(tablet) {
+            width: 120px;
+        }
+        .input-group {
+            @include respond-to(tablet) {
+                width: 100%;
+            }
+        }
+        .send-group {
+            input {
+                @include respond-to(tablet) {
+                    display: block;
+                }
+            }
+            svg {
+                @include respond-to(tablet) {
+                    right: 12px;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    &::after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: white;
+        opacity: .3;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        @include respond-to(tablet) {
+            display: none;
+        }
+    }
+    .input-group {
+        width: 100%;
+        height: 50px;
+        @include respond-to(tablet) {
+            width: 0;
+        }
+        input {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            padding: 0 40px 0 10px;
+            color: white;
+            border: none;
+        }
+    }
+    .send-group {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: 0;
+        right: 0;
+        @include respond-to(tablet) {
+            height: 42px;
+        }
+        .no-touch & {
+            &:hover {
+                svg {
+                    opacity: 1;
+                }
+            }
+        }
+        input {
+            position: relative;
+            z-index: $level2;
+            width: 100%;
+            height: 100%;
+            border: none;
+            background-color: transparent;
+            @include respond-to(tablet) {
+                display: none;
+            }
+        }
+        svg {
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            z-index: $level1;
+            fill: white;
+            opacity: .5;
+            transition: all $time;
+            @include respond-to(tablet) {
+                right: 3px;
+                top: 14px;
+            }
+        }
+    }
+}
+.header__contacto, .header__redes {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    svg {
+        width: 20px;
+        height: 20px;
+        fill: white;
+        opacity: .5;
+        transition: all $time;
+        @include respond-to(tablet) {
+            height: 14px;
+            margin-left: 0;
+        }
+    }
+    .no-touch & {
+        &:hover {
+            svg {
+                opacity: 1;
+            }
+        }
+    }
+}
+.header__redes {
+    svg {
+        max-height: 14px;
+        margin-right: 15px;
+        @include respond-to(tablet) {
+            transition: all $time;
+            margin-right: 18px;
+        }
+        @include respond-to(desktop) {
+            margin-right: 30px;
+        }
+        &:last-child {
+            @include respond-to(desktop) {
+                margin-right: 15px;
+            }
+        }
+    }
+}

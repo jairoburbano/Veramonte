@@ -1,0 +1,97 @@
+/*------------------------------------*\
+$TRADE
+\*------------------------------------*/
+.trade__content {
+    padding: 0 35px;
+    @include respond-to(tablet) {
+        padding-top: 40px;
+    }
+    .trade__item {
+        position: relative;
+        margin-bottom: 60px;
+        .trade__background {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            width: 140px;
+            height: 115px;
+            z-index: $level1;
+            display: none;
+            @include respond-to(tablet) {
+                display: block;
+            }
+        }
+        .trade__image {
+            display: none;
+            @include respond-to(tablet) {
+                display: block;
+                height: 400px;
+                width: 150px;
+                float: left;
+                padding-right: 20px;
+                position: relative;
+                z-index: $level2;
+            }
+        }
+        .trade__list {
+            position: relative;
+            z-index: $level2;
+            @include respond-to(tablet) {
+                width: calc(100% - 150px);
+                float: right;
+            }
+            .trade__list__title {
+                text-align: center;
+                margin-bottom: 30px;
+                text-transform: uppercase;
+                color: $title;
+                @extend .droid;
+                @include respond-to(tablet) {
+                    text-align: left;
+                    @include font-size(25px, 30px);
+                    margin-bottom: 25px;
+                }
+            }
+            .trade__list__content {
+                display: flex;
+                flex-flow: row wrap;
+                .trade__list__column {
+                    width: 100%;
+                    margin-bottom: 25px;
+                    @include respond-to(tablet) {
+                        width: (100% / 3);
+                    }
+                    @include respond-to(desktop) {
+                        width: (100% / 4);
+                    }
+                    .trade__list__title {
+                        border-bottom: 1px solid #D6B990;
+                        padding-bottom: 5px;
+                        margin-bottom: 10px;
+                        text-transform: uppercase;
+                        text-align: center;
+                        @include font-size(16px, 20px);
+                        @include respond-to(tablet) {
+                            margin-left: 0;
+                            text-align: left;
+                        }
+                    }
+                    a {
+                        display: block;
+                        @include font-size(14px, 18px);
+                        margin-bottom: 10px;
+                        color: #4D4D4D;
+                        text-align: center;
+                        @include respond-to(tablet) {
+                            text-align: left;
+                            padding-right: 15px;
+                        }
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

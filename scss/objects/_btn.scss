@@ -1,0 +1,106 @@
+/*------------------------------------*\
+$BTN
+\*------------------------------------*/
+.btn {
+    padding: 0;
+}
+.btn--more {
+    height: 36px;
+    border: 1px solid $button;
+    padding: 0 15px;
+    color: $gray;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: all $time;
+    .no-touch & {
+        &:hover {
+            background: $button;
+            color: white;
+        }
+    }
+}
+.btn--award {
+    width: 95px;
+    display: flex;
+    margin: auto;
+    border: 1px solid $title;
+    @include respond-to(tablet) {
+        margin: 0 0 0 auto;
+    }
+    @include respond-to(desktop) {
+        margin: 15px 67px 0 auto;
+    }
+    .no-touch & {
+        &:hover {
+            background: $title;
+            color: white;
+        }
+    }
+}
+.btn--load {
+    height: 36px;
+    border: 1px solid $title;
+    padding: 0 30px;
+    color: $gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all $time;
+    margin: auto;
+    background-color: transparent;
+    .no-touch & {
+        &:hover {
+            background: $title;
+            color: white;
+        }
+    }
+}
+.btn--back {
+    width: 100%;
+    height: 50px;
+    background: $title;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(white, .5);
+    @include font-size(15px, 26px);
+    transition: all $time;
+    .no-touch & {
+        &:hover {
+            color: rgba(white, 1);
+            svg {
+                opacity: 1;
+            }
+        }
+    }
+    svg {
+        width: 13px;
+        height: 26px;
+        fill: white;
+        margin-right: 20px;
+        opacity: .5;
+        transition: all $time;
+    }
+}
+.btn--map {
+    color: $title;
+    height: 38px;
+    border: 1px solid $title;
+    display: block;
+    margin: auto;
+    transition: all $time;
+    @include font-size(16px, 36px);
+    text-align: center;
+    padding: 0 15px;
+    @include respond-to(tablet) {
+        margin-left: auto;
+        margin-right: 0;
+    }
+    .no-touch & {
+        &:hover {
+            background: $title;
+            color: white;
+        }
+    }
+}

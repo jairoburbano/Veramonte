@@ -1,0 +1,62 @@
+/*------------------------------------*\
+$SETTINGS
+\*------------------------------------*/
+
+/* ============== // Transition // ============== */
+
+$transition-time: .3s;
+$transition-method: ease-in-out;
+$time : 300ms;
+
+/* ============== // FONTS // ============== */
+@font-face {
+    font-family: 'freelandregular';
+    src: url('../fonts/freeland-webfont.woff2') format('woff2'),
+        url('../fonts/freeland-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.freeland {
+    font-family: 'freelandregular';
+    font-weight: normal;
+}
+.pro {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+}
+.probold {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
+}
+.droid {
+    font-family: 'Droid Serif', serif;
+    font-weight: 400;
+}
+.droiditalic {
+    font-family: 'Droid Serif', serif;
+    font-weight: 400;
+    font-style: italic;
+}
+/* ============== // COLORS // ============== */
+$principal : #4d4d4d;
+$title : #5A4A42;
+$gray : #888A8D;
+$cream : #f8f4e9;
+$background : #F8F4E9;
+$button : #fbd389;
+$vino-1 : #A75F5D;
+$vino-2 : #D18C18;
+$vino-3 : #F7A900;
+$vino-4 : #66902F;
+$vino-5 : #D12C3D;
+$vino-6 : #B42C3A;
+$vino-7 : #AF1C2B;
+$vinos: (
+    vino-1 : #A75F5D,
+    vino-2 : #D18C18,
+    vino-3 : #F7A900,
+    vino-4 : #66902F,
+    vino-5 : #D12C3D,
+    vino-6 : #B42C3A,
+    vino-7 : #AF1C2B
+);
